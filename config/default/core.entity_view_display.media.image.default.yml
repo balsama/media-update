@@ -1,0 +1,33 @@
+uuid: 67eb9671-0dfd-4951-b7f5-c32c28ef3a4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.image
+    - image.style.crop_freeform
+    - media_entity.bundle.image
+  module:
+    - image
+_core:
+  default_config_hash: ymMlJDFlZOxNHB9FxTecp6V-1Dgab7eUjzGXoRFy9YM
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: crop_freeform
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  name: true
+  thumbnail: true
+  uid: true

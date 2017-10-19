@@ -1,0 +1,14 @@
+uuid: 4a433a3a-ff14-4c90-8751-10acb957ad56
+langcode: en
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.draft
+    - workbench_moderation.moderation_state.needs_review
+_core:
+  default_config_hash: 6J1nDF4mkj8uqQ4LzNb_hLoV0b-wIfjdJx3QQmjAMVg
+id: needs_review_draft
+label: 'Send Back to Draft'
+stateFrom: needs_review
+stateTo: draft
+weight: -6

@@ -1,0 +1,20 @@
+uuid: fc443680-3a8d-4005-b27d-b02790fe8a1a
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+    - media_entity_image
+third_party_settings:
+  crop:
+    image_field: image
+id: another_media_bundle
+label: 'Another Media Bundle'
+description: ''
+type: image
+queue_thumbnail_downloads: false
+new_revision: false
+type_configuration:
+  source_field: image
+  gather_exif: false
+field_map: {  }
