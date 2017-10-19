@@ -793,5 +793,5 @@ $databases['default']['default'] = array (
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
-$settings['install_profile'] = 'media_subprofile';
+$settings['install_profile'] = 'lightning';
 $config_directories['sync'] = '../config/default';
