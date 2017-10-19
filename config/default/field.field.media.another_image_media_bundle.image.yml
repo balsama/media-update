@@ -1,16 +1,16 @@
-uuid: bc2fc30b-a3b3-4838-9846-f228594a989a
+uuid: 5f517d67-1f8d-47b1-b8dc-d2d891af6199
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.image
-    - media_entity.bundle.another_media_bundle
+    - media_entity.bundle.another_image_media_bundle
   module:
     - image
-id: media.another_media_bundle.image
+id: media.another_image_media_bundle.image
 field_name: image
 entity_type: media
-bundle: another_media_bundle
+bundle: another_image_media_bundle
 label: Image
 description: ''
 required: false

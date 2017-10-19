@@ -1,4 +1,4 @@
-uuid: fc443680-3a8d-4005-b27d-b02790fe8a1a
+uuid: 0ffd34ba-ece1-4eaa-a296-6a5d29646c7b
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
 third_party_settings:
   crop:
     image_field: image
-id: another_media_bundle
-label: 'Another Media Bundle'
+id: another_image_media_bundle
+label: 'Another Image Media Bundle'
 description: ''
 type: image
 queue_thumbnail_downloads: false

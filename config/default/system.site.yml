@@ -1,7 +1,7 @@
-uuid: 26954859-2b89-4bc3-8e28-015e6c77bf6d
-name: 'My Media Upgrade'
+uuid: f08df43d-efb8-46b9-807c-9d5a42a929b7
+name: 'Drush Site-Install'
 mail: admin@example.com
-slogan: 'with a slogan'
+slogan: ''
 page:
   403: ''
   404: ''

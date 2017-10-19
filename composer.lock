@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6981fa6110bdbeb310fab1ae5f8fa0d1",
+    "content-hash": "f316861ec0ec0a44382a1bfe8acc53d5",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -1438,6 +1438,7 @@
             "type": "drupal-core",
             "extra": {
                 "patches_applied": {
+                    "Allow a profile to be installed from existing config": "https://www.drupal.org/files/issues/2788777-91.patch",
                     "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/1356276-360.patch",
                     "2880374 - Experimental modules should not have warnings after being installed": "https://www.drupal.org/files/issues/2880374-remove-experimental-warnings-6.patch",
                     "2880445 - Config sync should not throw a warning when not being writable": "https://www.drupal.org/files/issues/2880445-remove-config-write-warning-2.patch",

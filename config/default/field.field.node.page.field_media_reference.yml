@@ -1,12 +1,12 @@
-uuid: 90b14826-0352-40ad-a684-55c83ca2ebe5
+uuid: 17cadaff-f6ae-46ec-ada1-560d4d8d4d1b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_media_reference
-    - media_entity.bundle.another_media_bundle
+    - media_entity.bundle.another_image_media_bundle
     - media_entity.bundle.document
-    - media_entity.bundle.image
+    - media_entity.bundle.instagram
     - media_entity.bundle.tweet
     - media_entity.bundle.video
     - node.type.page
@@ -24,13 +24,13 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      another_media_bundle: another_media_bundle
+      another_image_media_bundle: another_image_media_bundle
       document: document
-      image: image
+      instagram: instagram
       tweet: tweet
       video: video
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: another_media_bundle
+    auto_create_bundle: another_image_media_bundle
 field_type: entity_reference

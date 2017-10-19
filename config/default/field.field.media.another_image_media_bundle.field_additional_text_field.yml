@@ -1,0 +1,19 @@
+uuid: 40fb9086-c43f-42ed-b665-63e036381215
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_additional_text_field
+    - media_entity.bundle.another_image_media_bundle
+id: media.another_image_media_bundle.field_additional_text_field
+field_name: field_additional_text_field
+entity_type: media
+bundle: another_image_media_bundle
+label: 'Additional Text Field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

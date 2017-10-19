@@ -1,4 +1,4 @@
-uuid: 597127fb-5221-4aa4-aad5-3bde7e60b2e4
+uuid: b9ae43fa-ad12-4773-89cd-64b0d09a7861
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_media_reference
     - field.field.node.page.field_meta_tags
-    - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
     - node.type.page
   module:
@@ -114,5 +113,4 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-hidden:
-  panelizer: true
+hidden: {  }

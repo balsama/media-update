@@ -1,10 +1,9 @@
-uuid: d2ada50f-1bdc-4d81-b848-78bd7a98fede
+uuid: 80726503-ce45-4834-aa48-a89cc259556c
 langcode: en
 status: true
 dependencies:
   config:
     - search_api.server.database
-    - core.entity_view_mode.node.full
   module:
     - search_api
     - node
@@ -25,7 +24,6 @@ field_settings:
       view_mode:
         'entity:node':
           page: default
-          landing_page: full
   label:
     label: Label
     property_path: aggregated_field

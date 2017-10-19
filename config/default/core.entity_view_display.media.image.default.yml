@@ -1,11 +1,10 @@
-uuid: 67eb9671-0dfd-4951-b7f5-c32c28ef3a4e
+uuid: b30ac640-c788-4c0d-aa6a-dbc4d1a8d177
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.media.image.field_media_in_library
     - field.field.media.image.image
-    - image.style.crop_freeform
     - media_entity.bundle.image
   module:
     - image
@@ -21,7 +20,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: crop_freeform
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
     region: content

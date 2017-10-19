@@ -1,4 +1,4 @@
-uuid: 9f229ee3-a5b6-45a6-ad4f-bfa7b81c7555
+uuid: 9bb27268-7750-40a2-8c0c-f9aca2ff0102
 langcode: en
 status: true
 dependencies:
@@ -6,21 +6,14 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_media_reference
     - field.field.node.page.field_meta_tags
-    - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
     - image.style.crop_freeform
     - node.type.page
   module:
     - media_entity
-    - panelizer
+    - metatag
     - text
     - user
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 _core:
   default_config_hash: Kfxnq5Imio9VFBoNa_PIkzXoTmjz_T-EY3mOrwDTddU
 id: node.page.default
@@ -31,26 +24,35 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 0
     settings: {  }
     third_party_settings: {  }
     region: content
   field_media_reference:
-    weight: 0
-    label: hidden
+    weight: 3
+    label: above
     settings:
       image_style: crop_freeform
       image_link: ''
     third_party_settings: {  }
     type: media_thumbnail
     region: content
-  links:
+  field_meta_tags:
+    type: metatag_empty_formatter
+    region: content
     weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: -20
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_meta_tags: true
-  panelizer: true
   scheduled_update: true
-  workbench_moderation_control: true

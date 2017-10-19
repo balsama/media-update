@@ -1,4 +1,4 @@
-uuid: e95cb9ce-f954-4afb-a051-bbac5dace497
+uuid: 31a26d5e-10b5-4ef5-a609-cff7cc91115d
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.media.embedded
     - field.field.media.image.field_media_in_library
     - field.field.media.image.image
-    - image.style.crop_freeform
     - media_entity.bundle.image
   module:
     - image
@@ -22,7 +21,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: crop_freeform
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
     region: content
