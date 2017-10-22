@@ -107,9 +107,8 @@ before_script:
   - sleep 5
 
 script:
-  # A lot of tests are expected to fail because of the extensions we have turned
-  # off in sub-profile.
-  #- ../bin/behat --strict --stop-on-failure --config ./sites/default/files/behat.yml --tags=none
+  # Run the media tests.
+  - ../bin/behat --strict --stop-on-failure --config ./sites/default/files/behat.yml --tags=media
   # Should be a test... new config equals old?
   - drush config-get system.site name
 
