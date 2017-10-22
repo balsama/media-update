@@ -109,7 +109,7 @@ script:
   # Imported config equals set config.
   - drush config-get system.site name
   # Run the media tests.
-  - ../bin/behat --strict --stop-on-failure --config ./sites/default/files/behat.yml --tags=media
+  - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media
 
 matrix:
   fast_finish: true
