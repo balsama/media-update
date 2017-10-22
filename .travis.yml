@@ -80,7 +80,7 @@ install:
   - composer update;
   - drush cache-rebuild --root=$TRAVIS_BUILD_DIR/docroot
   - drush updatedb --yes --root=$TRAVIS_BUILD_DIR/docroot
-  - drupal update:lightning
+  - drupal update:lightning --non-interactive
   - drupal module:uninstall media_entity
 
   # Set a custom config value and export all config.
