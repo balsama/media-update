@@ -88,7 +88,7 @@ install:
   - drush cex --yes --root=$TRAVIS_BUILD_DIR/docroot
 
   # Resinstall with new config.
-  - drush site-install media_subprofile
+  - drush site-install media_subprofile --root=$TRAVIS_BUILD_DIR/docroot
 
   # Generate the behat config.
   - cd $TRAVIS_BUILD_DIR
