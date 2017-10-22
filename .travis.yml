@@ -84,8 +84,8 @@ install:
   - drupal module:uninstall media_entity
 
   # Set a custom config value and export all config.
-  - drush config-set system.site name hdiugtusft --yes
-  - drush cex --yes
+  - drush config-set system.site name ursala --yes --root=$TRAVIS_BUILD_DIR/docroot
+  - drush cex --yes --root=$TRAVIS_BUILD_DIR/docroot
 
   # Resinstall with new config.
   - drush site-install media_subprofile
