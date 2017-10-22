@@ -1,0 +1,23 @@
+uuid: e9ecaa15-cb2b-4045-921c-033c069c901b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_in_library
+    - media_entity.bundle.my_image_media_bundle
+id: media.my_image_media_bundle.field_media_in_library
+field_name: field_media_in_library
+entity_type: media
+bundle: my_image_media_bundle
+label: 'Save to my media library'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Saved to my media library'
+  off_label: 'Not in my media library'
+field_type: boolean

@@ -1,0 +1,29 @@
+uuid: 078bccd4-a7ca-46bd-9589-ec85ea4bc1f0
+langcode: en
+status: true
+dependencies: {  }
+id: media_reference_node_creator
+label: 'Media Reference Node creator'
+weight: 7
+is_admin: null
+permissions:
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access panels in-place editing'
+  - 'access toolbar'
+  - 'administer panelizer node media_reference_node content'
+  - 'administer panelizer node media_reference_node layout'
+  - 'change layouts in place editing'
+  - 'create media_reference_node content'
+  - 'create url aliases'
+  - 'edit own media_reference_node content'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use needs_review_needs_review transition'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view media_reference_node revisions'
+  - 'view own unpublished content'

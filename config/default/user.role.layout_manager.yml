@@ -17,4 +17,5 @@ permissions:
   - 'administer node display'
   - 'administer panelizer'
   - 'administer panelizer node landing_page defaults'
+  - 'administer panelizer node media_reference_node defaults'
   - 'administer panelizer node page defaults'

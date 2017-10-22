@@ -1,0 +1,14 @@
+uuid: e1f70cf7-9733-4a30-8747-c4e04cd7343e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.media_reference_node_creator
+  module:
+    - user
+id: user_add_role_action.media_reference_node_creator
+label: 'Add the Media Reference Node creator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: media_reference_node_creator

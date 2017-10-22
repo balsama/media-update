@@ -79,6 +79,7 @@ display:
             'entity:node':
               page: teaser
               landing_page: teaser
+              media_reference_node: default
       fields:
         rendered:
           table: search_api_index_content
