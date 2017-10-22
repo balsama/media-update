@@ -73,6 +73,25 @@ install:
   - drush site-install media_subprofile --yes --account-pass=admin --db-url=mysql://lightning:lightning@127.0.0.1/drupal
   - drush config-set system.logging error_level all --yes
 
+  # Generate the behat config.
+  - cd $TRAVIS_BUILD_DIR
+  - ./bin/drupal behat:init http://127.0.0.1:8080 --merge=../docroot/profiles/contrib/lightning/tests/behat.yml
+  - ./bin/drupal behat:include ../docroot/profiles/contrib/lightning/tests/features --with-subcontexts=../docroot/profiles/contrib/lightning/tests/features/bootstrap --with-subcontexts=../docroot/profiles/contrib/lightning/src/LightningExtension/Context
+  - cd $TRAVIS_BUILD_DIR/docroot
+
+  before_script:
+  - drush runserver --default-server=builtin 8080 &>/dev/null &
+
+  # Start Selenium and dump its ginormous log into a temporary file.
+  - jdk_switcher use oraclejdk8
+  - mkdir tmp
+  - selenium-server-standalone -port 4444 -log tmp/selenium2.log &
+  - sleep 5
+
+  # Run tests on updated install.
+  - cd $TRAVIS_BUILD_DIR/docroot
+  - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media
+
   # Update codebase to media branch and run db updates.
   - cd $TRAVIS_BUILD_DIR;
   - rm -rf docroot/modules/contrib && rm -rf docroot/profiles/contrib/lightning && rm -rf vendor && rm composer.lock;
@@ -83,32 +102,24 @@ install:
   - drupal update:lightning --no-interaction
   - drupal module:uninstall media_entity
 
+  # Run tests updated install.
+  - cd $TRAVIS_BUILD_DIR/docroot
+  - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media
+
   # Set a custom config value and export all config.
-  - drush config-set system.site name ursala --yes --root=$TRAVIS_BUILD_DIR/docroot
-  - drush cex --yes --root=$TRAVIS_BUILD_DIR/docroot
+  - cd $TRAVIS_BUILD_DIR/docroot
+  - drush config-set system.site name ursala --yes
+  - drush cex --yes
 
   # Reinstall with new config.
-  - drush site-install media_subprofile --yes --root=$TRAVIS_BUILD_DIR/docroot
-
-  # Generate the behat config.
-  - cd $TRAVIS_BUILD_DIR
-  - ./bin/drupal behat:init http://127.0.0.1:8080 --merge=../docroot/profiles/contrib/lightning/tests/behat.yml
-  - ./bin/drupal behat:include ../docroot/profiles/contrib/lightning/tests/features --with-subcontexts=../docroot/profiles/contrib/lightning/tests/features/bootstrap --with-subcontexts=../docroot/profiles/contrib/lightning/src/LightningExtension/Context
   - cd $TRAVIS_BUILD_DIR/docroot
-
-before_script:
-  - drush runserver --default-server=builtin 8080 &>/dev/null &
-
-  # Start Selenium and dump its ginormous log into a temporary file.
-  - jdk_switcher use oraclejdk8
-  - mkdir tmp
-  - selenium-server-standalone -port 4444 -log tmp/selenium2.log &
-  - sleep 5
+  - drush site-install media_subprofile --yes
 
 script:
+  - cd $TRAVIS_BUILD_DIR/docroot
   # Imported config equals set config.
   - drush config-get system.site name
-  # Run the media tests.
+  # Run tests on updated, exported, reinstalled config.
   - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media
 
 matrix:
