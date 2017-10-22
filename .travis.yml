@@ -81,6 +81,7 @@ install:
   - drush cache-rebuild
   - drush updatedb --yes --root=$TRAVIS_BUILD_DIR/docroot
   - drupal update:lightning
+  - drupal module:uninstall media_entity
 
   # Set a custom config value and export all config.
   - drush config-set system.site name hdiugtusft --yes
