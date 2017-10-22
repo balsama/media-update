@@ -29,7 +29,8 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/balsama/lightning"
+            "url": "https://github.com/balsama/lightning",
+            "no-api": true
         },
         {
             "type": "composer",
