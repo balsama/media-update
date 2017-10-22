@@ -94,7 +94,6 @@ install:
   - cd $TRAVIS_BUILD_DIR
   - ./bin/drupal behat:init http://127.0.0.1:8080 --merge=../docroot/profiles/contrib/lightning/tests/behat.yml
   - ./bin/drupal behat:include ../docroot/profiles/contrib/lightning/tests/features --with-subcontexts=../docroot/profiles/contrib/lightning/tests/features/bootstrap --with-subcontexts=../docroot/profiles/contrib/lightning/src/LightningExtension/Context
-  - if [ $VERSION = "SUBPROFILE" ]; then ./bin/drupal behat:include ../tests/features; fi;
   - cd $TRAVIS_BUILD_DIR/docroot
 
 before_script:
@@ -108,7 +107,7 @@ before_script:
 
 script:
   # Run the media tests.
-  - ../bin/behat --strict --stop-on-failure --config ./sites/default/files/behat.yml --tags=media
+  #- ../bin/behat --strict --stop-on-failure --config ./sites/default/files/behat.yml --tags=media
   # Should be a test... new config equals old?
   - drush config-get system.site name
 
