@@ -13,9 +13,7 @@ php:
   - 7.0
 
 env:
-  - VERSION=STABLE TEST_TAGS=lightning
-  - VERSION=HEAD TEST_TAGS=lightning
-  - VERSION=SUBPROFILE TEST_TAGS=~search
+  - VERSION=balsama-fork
 
 addons:
   apt:
@@ -72,35 +70,23 @@ install:
 
   # Install Lightning.
   - cd $TRAVIS_BUILD_DIR/docroot
-  - drush site-install lightning --yes --account-pass=admin --db-url=mysql://lightning:lightning@127.0.0.1/drupal
+  - drush site-install media_subprofile --yes --account-pass=admin --db-url=mysql://lightning:lightning@127.0.0.1/drupal
   - drush config-set system.logging error_level all --yes
 
-  # Enable the dev module which will perform any manual update steps needed
-  # during drush updatedb.
-  - drush pm-enable lightning_dev --yes
+  # Update codebase to media branch and run db updates.
+  - cd $TRAVIS_BUILD_DIR;
+  - rm -rf docroot/modules/contrib && rm -rf docroot/profiles/contrib/lightning && rm -rf vendor && rm composer.lock;
+  - composer require acquia/lightning:dev-core-media --no-update;
+  - composer update;
+  - drush updatedb --yes --root=$TRAVIS_BUILD_DIR/docroot
+  - drupal update:lightning
 
-  # Create custom sub-profile, install it, and download custom tests.
-  - 'if [ $VERSION = "SUBPROFILE" ]; then
-      cd $TRAVIS_BUILD_DIR;
-      composer require drupal/paragraphs;
-      drupal lightning:subprofile --no-interaction --name="Lightning Extender" --machine-name=subprofile --include=paragraphs --exclude=lightning_search;
-      mkdir -p ./tests/features;
-      curl -o tests/features/subprofile.feature  https://gist.githubusercontent.com/balsama/c8c03bb21f7a91a1a87d01ef185a3955/raw;
-      mkdir -p ./tests/features;
-      chmod +w ./docroot/sites/default/settings.php;
-      cd docroot;
-      drush site-install subprofile --yes --account-pass=admin --db-url=mysql://lightning:lightning@127.0.0.1/drupal;
-      drush config-set lightning_api.settings entity_json true --yes;
-    fi;'
+  # Set a custom config value and export all config.
+  - drush config-set system.site name hdiugtusft --yes
+  - drush cex --yes
 
-  # Update codebase to head and run db updates.
-  - 'if [ $VERSION = "HEAD" ]; then
-      cd $TRAVIS_BUILD_DIR;
-      rm -rf docroot/modules/contrib && rm -rf docroot/profiles/contrib/lightning && rm -rf vendor && rm composer.lock;
-      composer require acquia/lightning:dev-8.x-2.x --no-update;
-      composer update;
-      drupal update:execute;
-    fi;'
+  # Resinstall with new config.
+  - drush site-install media_subprofile
 
   # Generate the behat config.
   - cd $TRAVIS_BUILD_DIR
@@ -119,7 +105,11 @@ before_script:
   - sleep 5
 
 script:
-  - ../bin/behat --strict --stop-on-failure --config ./sites/default/files/behat.yml --tags=${TEST_TAGS}
+  # A lot of tests are expected to fail because of the extensions we have turned
+  # off in sub-profile.
+  #- ../bin/behat --strict --stop-on-failure --config ./sites/default/files/behat.yml --tags=none
+  # Should be a test... new config equals old?
+  - drush config-get system.site name
 
 matrix:
   fast_finish: true
