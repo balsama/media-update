@@ -79,7 +79,7 @@ install:
   - ./bin/drupal behat:include ../docroot/profiles/contrib/lightning/tests/features --with-subcontexts=../docroot/profiles/contrib/lightning/tests/features/bootstrap --with-subcontexts=../docroot/profiles/contrib/lightning/src/LightningExtension/Context
   - cd $TRAVIS_BUILD_DIR/docroot
 
-  before_script:
+before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
 
   # Start Selenium and dump its ginormous log into a temporary file.
