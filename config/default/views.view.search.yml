@@ -1,4 +1,4 @@
-uuid: ab331884-525c-4a5a-b245-b620a15a8f78
+uuid: ada397ea-27f4-4110-9f6c-bce4971447a1
 langcode: en
 status: true
 dependencies:
@@ -78,6 +78,7 @@ display:
           view_modes:
             'entity:node':
               page: teaser
+              landing_page: teaser
       fields:
         rendered:
           table: search_api_index_content

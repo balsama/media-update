@@ -1,4 +1,4 @@
-uuid: ffae3dd1-95f2-4a37-97be-49ba928d8222
+uuid: 744f2e46-ad18-4e9b-b95c-014103d73d2e
 langcode: en
 status: true
 dependencies:
@@ -30,7 +30,4 @@ content:
   workbench_moderation_control:
     weight: -20
     region: content
-hidden:
-  field_media_reference: true
-  field_meta_tags: true
-  scheduled_update: true
+hidden: {  }

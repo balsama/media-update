@@ -1,17 +1,21 @@
-uuid: 69772761-4db8-476e-a2f7-6f00cd0d00c4
+uuid: 2b248b6b-ca1b-4054-be25-7fb144d1ad61
 langcode: en
 status: true
 dependencies: {  }
 id: page_creator
 label: 'Basic page creator'
-weight: 7
+weight: 2
 is_admin: null
 permissions:
   - 'access contextual links'
   - 'access image_browser entity browser pages'
   - 'access in-place editing'
   - 'access media_browser entity browser pages'
+  - 'access panels in-place editing'
   - 'access toolbar'
+  - 'administer panelizer node page content'
+  - 'administer panelizer node page layout'
+  - 'change layouts in place editing'
   - 'create page content'
   - 'create url aliases'
   - 'edit own page content'

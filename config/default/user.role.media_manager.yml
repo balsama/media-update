@@ -1,4 +1,4 @@
-uuid: ba3eb2ae-5171-4223-a167-9d302045cbd4
+uuid: b1585a44-4f1c-45da-87d5-626bc5c5df41
 langcode: en
 status: true
 dependencies: {  }
@@ -9,7 +9,6 @@ label: 'Media manager'
 weight: 6
 is_admin: null
 permissions:
-  - 'access image_browser entity browser pages'
   - 'access media overview'
   - 'access media_browser entity browser pages'
   - 'administer media'

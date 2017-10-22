@@ -1,10 +1,10 @@
-uuid: ec3ebe61-45fc-42ab-bf8e-94165fe9bf8d
+uuid: 478d0f16-e24a-4fb3-a064-2c1977da8e7a
 langcode: en
 status: true
 dependencies: {  }
 id: page_reviewer
 label: 'Basic page reviewer'
-weight: 8
+weight: 3
 is_admin: null
 permissions:
   - 'access content overview'

@@ -1,4 +1,4 @@
-uuid: 529b332b-be3e-4249-aed1-a8048e509f07
+uuid: 8b9bbf3b-6e77-4652-b914-00d5702497e7
 langcode: en
 status: true
 dependencies: {  }
@@ -9,7 +9,6 @@ label: 'Media creator'
 weight: 5
 is_admin: null
 permissions:
-  - 'access image_browser entity browser pages'
   - 'access media overview'
   - 'access media_browser entity browser pages'
   - 'create media'
