@@ -106,10 +106,10 @@ before_script:
   - sleep 5
 
 script:
-  # Run the media tests.
-  #- ../bin/behat --strict --stop-on-failure --config ./sites/default/files/behat.yml --tags=media
-  # Should be a test... new config equals old?
+  # Imported config equals set config.
   - drush config-get system.site name
+  # Run the media tests.
+  - ../bin/behat --strict --stop-on-failure --config ./sites/default/files/behat.yml --tags=media
 
 matrix:
   fast_finish: true
