@@ -78,6 +78,7 @@ install:
   - rm -rf docroot/modules/contrib && rm -rf docroot/profiles/contrib/lightning && rm -rf vendor && rm composer.lock;
   - composer require acquia/lightning:dev-core-media --no-update;
   - composer update;
+  - drush cache-rebuild
   - drush updatedb --yes --root=$TRAVIS_BUILD_DIR/docroot
   - drupal update:lightning
 
