@@ -3,7 +3,11 @@ langcode: und
 status: true
 dependencies:
   module:
+    - crop
     - media_entity_image
+third_party_settings:
+  crop:
+    image_field: image
 _core:
   default_config_hash: '-L1iQMNQszdvp0XZx3HA7uzKBmU7ccdXh3kHCKtVFQs'
 id: image

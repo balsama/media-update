@@ -1,15 +1,15 @@
-uuid: fef87585-97f1-4d14-b9d2-e9b5cb04a696
+uuid: b2829a92-b93a-40bd-bd50-72445622ac6a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_image
+    - field.storage.media.field_new_field
     - media_entity.bundle.image
-id: media.image.field_image
-field_name: field_image
+id: media.image.field_new_field
+field_name: field_new_field
 entity_type: media
 bundle: image
-label: 'Image source'
+label: 'New Field'
 description: ''
 required: false
 translatable: false

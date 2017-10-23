@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_image
     - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_new_field
     - field.field.media.image.image
     - media_entity.bundle.image
   module:
@@ -16,7 +16,7 @@ targetEntityType: media
 bundle: image
 mode: default
 content:
-  field_image:
+  field_new_field:
     weight: 1
     label: above
     settings:

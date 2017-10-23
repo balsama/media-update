@@ -5,4 +5,4 @@ Feature: Custom media types and fields
     Given I am logged in as a user with the media_creator role
     When I visit "/media/add"
     And I click "Image"
-    Then I should see "Image source"
+    Then I should see "New Field"
