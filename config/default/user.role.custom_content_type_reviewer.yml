@@ -1,0 +1,18 @@
+uuid: 316cd95c-346c-4a03-ac88-54dc8b379334
+langcode: en
+status: true
+dependencies: {  }
+id: custom_content_type_reviewer
+label: 'Custom Content Type reviewer'
+weight: 8
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'delete any custom_content_type content'
+  - 'edit any custom_content_type content'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_published transition'
+  - 'use published_archived transition'
+  - 'use published_published transition'
+  - 'view moderation states'

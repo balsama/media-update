@@ -26,6 +26,7 @@ field_settings:
         'entity:node':
           page: default
           landing_page: full
+          custom_content_type: default
   label:
     label: Label
     property_path: aggregated_field

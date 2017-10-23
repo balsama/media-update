@@ -1,0 +1,14 @@
+uuid: cc0768fa-a5c8-4c74-9612-0eb55b44b0e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.custom_content_type_reviewer
+  module:
+    - user
+id: user_add_role_action.custom_content_type_reviewer
+label: 'Add the Custom Content Type reviewer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: custom_content_type_reviewer

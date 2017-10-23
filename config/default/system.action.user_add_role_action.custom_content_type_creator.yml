@@ -1,0 +1,14 @@
+uuid: 0efb2ba7-022d-44fa-bf59-afe60c367f8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.custom_content_type_creator
+  module:
+    - user
+id: user_add_role_action.custom_content_type_creator
+label: 'Add the Custom Content Type creator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: custom_content_type_creator

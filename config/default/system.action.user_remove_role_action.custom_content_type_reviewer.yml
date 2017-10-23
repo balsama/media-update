@@ -1,0 +1,14 @@
+uuid: 39e7bf5a-bf4a-4370-9edc-59212ae01fe3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.custom_content_type_reviewer
+  module:
+    - user
+id: user_remove_role_action.custom_content_type_reviewer
+label: 'Remove the Custom Content Type reviewer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: custom_content_type_reviewer
