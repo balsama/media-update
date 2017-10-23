@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_browser
-    - field.field.media.image.field_image_source
     - field.field.media.image.field_media_in_library
     - field.field.media.image.image
     - image.style.medium
@@ -21,14 +20,6 @@ targetEntityType: media
 bundle: image
 mode: media_browser
 content:
-  field_image_source:
-    type: string_textfield
-    weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_media_in_library:
     type: boolean_checkbox
     weight: 2
