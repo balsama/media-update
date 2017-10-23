@@ -115,7 +115,7 @@ before_script:
 
 script:
   - cd $TRAVIS_BUILD_DIR/docroot
-  # Imported config equals set config.
+  # Ensure active imported config equals set config.
   - drush config-get system.site name
   # Run tests on updated, exported, reinstalled config.
   - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media

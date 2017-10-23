@@ -1,11 +1,11 @@
-uuid: 59746c87-c045-44ef-be18-b2bbcacfb7cd
+uuid: e7f75237-9e2e-4631-9d50-99c0537f95e4
 langcode: en
 status: true
 dependencies:
   module:
     - media_entity
-id: media.field_image_secondary_diescripti
-field_name: field_image_secondary_diescripti
+id: media.field_image_source
+field_name: field_image_source
 entity_type: media
 type: string
 settings:
