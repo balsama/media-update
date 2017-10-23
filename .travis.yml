@@ -88,7 +88,7 @@ before_script:
 
   # Run tests on original install.
   - cd $TRAVIS_BUILD_DIR/docroot
-  - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media
+  - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=123abc
 
   # Update codebase to media branch and run db updates.
   - cd $TRAVIS_BUILD_DIR;
