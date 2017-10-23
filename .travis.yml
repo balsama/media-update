@@ -13,7 +13,8 @@ php:
   - 7.0
 
 env:
-  - VERSION=balsama-fork
+  - VERSION=UPDATE
+  - VERSION=REINSTALL
 
 addons:
   apt:
@@ -95,23 +96,18 @@ before_script:
   - drush updatedb --yes --root=$TRAVIS_BUILD_DIR/docroot
   - drupal update:lightning --no-interaction
 
-  # Run tests on updated install.
+  # Export new config.
   - cd $TRAVIS_BUILD_DIR/docroot
-  - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media
-
-  # Set a custom config value and export all config.
-  - cd $TRAVIS_BUILD_DIR/docroot
-  - drush config-set system.site name ursala --yes
   - drush cex --yes
 
   # Reinstall with new config.
   - cd $TRAVIS_BUILD_DIR/docroot
-  - drush site-install media_subprofile --yes
+  - 'if [ $VERSION = "REINSTALL" ]; then
+      drush site-install media_subprofile --yes;
+    fi;'
 
 script:
   - cd $TRAVIS_BUILD_DIR/docroot
-  # Ensure active imported config equals set config.
-  - drush config-get system.site name
   # Run tests on updated, exported, reinstalled config.
   - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media
 
