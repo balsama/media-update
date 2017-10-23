@@ -30,4 +30,7 @@ content:
   workbench_moderation_control:
     weight: -20
     region: content
-hidden: {  }
+hidden:
+  field_meta_tags: true
+  panelizer: true
+  scheduled_update: true

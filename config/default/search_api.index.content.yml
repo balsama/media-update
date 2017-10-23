@@ -26,7 +26,6 @@ field_settings:
         'entity:node':
           page: default
           landing_page: full
-          media_reference_node: default
   label:
     label: Label
     property_path: aggregated_field
