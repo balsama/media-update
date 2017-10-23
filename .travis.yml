@@ -62,21 +62,19 @@ install:
   - phpenv config-add drupal.php.ini
   - phpenv rehash
 
-  # Add Devel, which is a dependency of Lightning Dev, to the codebase
-  - composer require drupal/devel --no-update
-
   # Build the Lightning code base.
   - composer install
 
-  # Install Lightning.
+  # Install Lightning sub-profile with custom media config.
   - cd $TRAVIS_BUILD_DIR/docroot
   - drush site-install media_subprofile --yes --account-pass=admin --db-url=mysql://lightning:lightning@127.0.0.1/drupal
   - drush config-set system.logging error_level all --yes
 
   # Generate the behat config.
   - cd $TRAVIS_BUILD_DIR
-  - ./bin/drupal behat:init http://127.0.0.1:8080 --merge=../docroot/profiles/contrib/lightning/tests/behat.yml
-  - ./bin/drupal behat:include ../docroot/profiles/contrib/lightning/tests/features --with-subcontexts=../docroot/profiles/contrib/lightning/tests/features/bootstrap --with-subcontexts=../docroot/profiles/contrib/lightning/src/LightningExtension/Context
+  - drupal behat:init http://127.0.0.1:8080 --merge=../docroot/profiles/contrib/lightning/tests/behat.yml
+  - drupal behat:include ../docroot/profiles/contrib/lightning/tests/features --with-subcontexts=../docroot/profiles/contrib/lightning/tests/features/bootstrap --with-subcontexts=../docroot/profiles/contrib/lightning/src/LightningExtension/Context
+  - drupal behat:include ../docroot/profiles/custom/media_subprofile/tests/behat/features
   - cd $TRAVIS_BUILD_DIR/docroot
 
 before_script:
