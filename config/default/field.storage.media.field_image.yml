@@ -1,0 +1,21 @@
+uuid: 06f95f98-91e4-4ae5-ade7-4b8066ccaa68
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.field_image
+field_name: field_image
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
