@@ -9,6 +9,5 @@ Feature: Custom media types and fields
 
   Scenario: Media reference field is migrated
     Given I am logged in as a user with the "media_creator,media_reference_node_creator" roles
-    When I visit "node/add"
-    And I click "Media Reference Node"
+    When I visit "node/add/media_reference_node"
     Then I should see "Media Reference Field"
