@@ -16,15 +16,14 @@ configurations expoered as config.
 
 ## Test Outline
 1. Application is installed as-is from this repo
-1. Tests are run
 1. Update to branch of Lightning with core media migration
-1. **Clear cache**
+1. **Rebuild Drupal caches**
 1. Run Database Updates
 1. Run Lightning updates
-1. Run tests again
-1. **Uninstall `media_entity` module**
+1. Run Lightning Media tests plus custom tests
+1. ~~**Uninstall `media_entity` module**~~ *Done
 1. Export config
 1. Re-install site from fresh, post-update config
-1. Run tests a third time
+1. Run tests again
 
 * Steps in **bold** should be part of the update and should not be needed here. 
