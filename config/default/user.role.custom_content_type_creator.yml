@@ -1,0 +1,29 @@
+uuid: 60de2c92-1637-4149-b85d-a666223cc804
+langcode: en
+status: true
+dependencies: {  }
+id: custom_content_type_creator
+label: 'Custom Content Type creator'
+weight: 7
+is_admin: null
+permissions:
+  - 'access contextual links'
+  - 'access image_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media_browser entity browser pages'
+  - 'access panels in-place editing'
+  - 'access toolbar'
+  - 'administer panelizer node custom_content_type content'
+  - 'administer panelizer node custom_content_type layout'
+  - 'change layouts in place editing'
+  - 'create custom_content_type content'
+  - 'create url aliases'
+  - 'edit own custom_content_type content'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use needs_review_needs_review transition'
+  - 'use text format rich_text'
+  - 'view any unpublished content'
+  - 'view custom_content_type revisions'
+  - 'view latest version'
+  - 'view own unpublished content'

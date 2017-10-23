@@ -1,0 +1,14 @@
+uuid: bd882689-c966-4823-9583-25effa8801a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.custom_content_type_creator
+  module:
+    - user
+id: user_remove_role_action.custom_content_type_creator
+label: 'Remove the Custom Content Type creator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: custom_content_type_creator
