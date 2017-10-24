@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb378ad4c94cbbf0a042dea7e84a4954",
+    "content-hash": "c9757adfc0742d3ec83b305c23c0e541",
     "packages": [
         {
             "name": "acquia/lightning",
             "version": "2.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/acquia/lightning",
+                "url": "https://github.com/acquia/lightning.git",
                 "reference": "3888e6f6795d8deae5e7121a3635ceac00be69f2"
             },
             "dist": {
