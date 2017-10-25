@@ -57,5 +57,7 @@ Feature: Custom media types and fields
     And I select "Delete media" from "Action"
     And I check the box "Select all rows in this table"
     And I press the "Apply to selected items" button
-    Then I should not see "I'm a tweet"
+    And I press the "Delete" button
+    Then I should see "Deleted 2 media items."
+    And I should not see "I'm a tweet"
     And I should not see "I'm an instagram"
