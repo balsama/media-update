@@ -61,7 +61,7 @@ Feature: Custom media types and fields
     And I check the box "edit-media-bulk-form-1"
     And I press the "Apply to selected items" button
     And I should be on "/admin/content/media/delete"
-    And I press the "Delete" button
+    And I press the "edit-submit" button
     Then I should see "Deleted 2 media items."
     And I should not see "I'm a tweet"
     And I should not see "I'm an instagram"
