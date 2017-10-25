@@ -109,7 +109,7 @@ before_script:
 script:
   - cd $TRAVIS_BUILD_DIR/docroot
   # Run tests on updated, exported, reinstalled config.
-  - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media_actions
+  - ../bin/behat --strict --config ./sites/default/files/behat.yml --tags=media
 
 matrix:
   fast_finish: true
