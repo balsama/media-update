@@ -48,7 +48,7 @@ Feature: Custom media types and fields
 
   @media_actions
   Scenario: Media actions are functional
-    Given I am logged in as a user with the "media_creator" role
+    Given I am logged in as a user with the "administrator" role
     And media entities:
       | bundle    | name             | embed_code                                                  | status | field_media_in_library |
       | tweet     | I'm a tweet      | https://twitter.com/50NerdsofGrey/status/757319527151636480 | 1      | 1                      |
@@ -60,8 +60,7 @@ Feature: Custom media types and fields
     And I check the box "edit-media-bulk-form-0"
     And I check the box "edit-media-bulk-form-1"
     And I press the "Apply to selected items" button
-    And I should be on "/admin/content/media/delete"
-    And I press the "edit-submit" button
+    And I press the "Delete" button
     Then I should see "Deleted 2 media items."
     And I should not see "I'm a tweet"
     And I should not see "I'm an instagram"
