@@ -13,7 +13,7 @@ Feature: Custom media types and fields
     Then I should see "Image Reference Field"
 
   Scenario: Media actions are present
-    Given I am logged in as a user with the "media_creator,custom_content_type_creator" roles
+    Given I am logged in as a user with the "media_creator" role
     And media entities:
       | bundle    | name             | embed_code                                                  | status | field_media_in_library |
       | tweet     | I'm a tweet      | https://twitter.com/50NerdsofGrey/status/757319527151636480 | 1      | 1                      |
@@ -25,7 +25,7 @@ Feature: Custom media types and fields
     And I should see "Language"
 
   Scenario: Media actions are functional
-    Given I am logged in as a user with the "media_creator,custom_content_type_creator" roles
+    Given I am logged in as a user with the "media_creator" role
     And media entities:
       | bundle    | name             | embed_code                                                  | status | field_media_in_library |
       | tweet     | I'm a tweet      | https://twitter.com/50NerdsofGrey/status/757319527151636480 | 1      | 1                      |
