@@ -92,7 +92,6 @@ before_script:
   - rm -rf docroot/modules/contrib && rm -rf docroot/profiles/contrib/lightning && rm -rf vendor && rm composer.lock;
   - composer require acquia/lightning:2.2.1-alpha2 --no-update;
   - composer update;
-  - drush cache-rebuild --root=$TRAVIS_BUILD_DIR/docroot
   - drush updatedb --yes --root=$TRAVIS_BUILD_DIR/docroot
   - drupal update:lightning --no-interaction
 
