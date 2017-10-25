@@ -33,6 +33,5 @@ Feature: Custom media types and fields
     When I visit "/admin/content/media"
     And I select "Tweet" from "Provider"
     And I press the "Apply" button
-    And I wait for AJAX to finish
     Then I should see "I'm a tweet"
     And I should not see "I'm an instagram"
