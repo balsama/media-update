@@ -55,7 +55,8 @@ Feature: Custom media types and fields
     And I should see "I'm a tweet"
     And I should see "I'm an instagram"
     And I select "Delete media" from "Action"
-    And I check the box "Select all rows in this table"
+    And I check the box "edit-media-bulk-form-0"
+    And I check the box "edit-media-bulk-form-1"
     And I press the "Apply to selected items" button
     And I press the "Delete" button
     Then I should see "Deleted 2 media items."
