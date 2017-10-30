@@ -108,7 +108,7 @@ before_script:
 
   # Rebuild cache
   - cd $TRAVIS_BUILD_DIR
-  drush cache-rebuild --root=$TRAVIS_BUILD_DIR/docroot
+  - drush cache-rebuild --root=$TRAVIS_BUILD_DIR/docroot
 
 script:
   - cd $TRAVIS_BUILD_DIR/docroot
