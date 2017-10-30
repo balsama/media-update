@@ -88,8 +88,8 @@ before_script:
   - sleep 5
 
   # Update codebase to media branch and run db updates.
-  - cd $TRAVIS_BUILD_DIR;
-  - rm -rf docroot/modules/contrib && rm -rf docroot/profiles/contrib/lightning && rm -rf vendor && rm composer.lock;
+  - cd $TRAVIS_BUILD_DIR
+  - rm -rf docroot/modules/contrib && rm -rf docroot/profiles/contrib/lightning && rm -rf vendor && rm composer.lock
   - composer require acquia/lightning:2.2.1 --no-update;
   - composer update;
   - drush cache-rebuild --root=$TRAVIS_BUILD_DIR/docroot
@@ -105,6 +105,10 @@ before_script:
   - 'if [ $VERSION = "REINSTALL" ]; then
       drush site-install media_subprofile --yes;
     fi;'
+
+  # Rebuild cache
+  - cd $TRAVIS_BUILD_DIR
+  drush cache-rebuild --root=$TRAVIS_BUILD_DIR/docroot
 
 script:
   - cd $TRAVIS_BUILD_DIR/docroot
